@@ -76,7 +76,7 @@ class Random {
     static selectNItemsSeeded(seed, list, n) {
         seedrandom(seed, {global: true});
         let returnList = [];
-        while (returnList.length <= n) {
+        while (returnList.length < n) {
             let item = Math.floor(Math.random() * list.length) + 0;
             returnList.push(list[item]);
         }
