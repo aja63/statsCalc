@@ -1,5 +1,5 @@
-[![Coverage Status](https://coveralls.io/repos/github/ae324/stats_calc_project/badge.svg?branch=master)](https://coveralls.io/github/ae324/stats_calc_project?branch=master)
-[![Build Status](https://travis-ci.org/ae324/stats_calc_project.svg?branch=master)](https://travis-ci.org/ae324/stats_calc_project)
+[![Coverage Status](https://coveralls.io/repos/github/aja63/statsCalc/badge.svg?branch=master)](https://coveralls.io/github/ae324/stats_calc_project?branch=master)
+[![Build Status](https://travis-ci.org/ae324/stats_calc_project.svg?branch=master)](https://travis-ci.org/aja63/statsCalcproject)
 
 
 Abraham Allen did the random and sampling modules.
