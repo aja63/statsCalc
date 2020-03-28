@@ -29,6 +29,7 @@ class Sampling {
 
     static systematicSample(list, sampleSize) {
     let newList = [];
+    let picker = 0;
     for (picker = Math.floor(Math.random() * list.length) + 1; newList.length < sampleSize; picker++ ){
         if(picker == list.length){picker = 0};
         newList.push(list[picker])}
