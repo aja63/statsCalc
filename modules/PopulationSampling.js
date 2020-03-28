@@ -22,32 +22,18 @@ class Sampling {
         return percToZScore.get(perc);
     }
 
-    static simpleRandSample(arrList, sampleSize, seed=100) {
+    static simpleRandSample(list, sampleSize, seed=100) {
         // pick a simple random sample from array, with replacement and optional seed
-        return Random.selectNItemsSeeded(seed, arrList, sampleSize);
+        return Random.selectNItemsSeeded(seed, list, sampleSize);
     }
 
-    static systematicSample(arrList, sampleSize) {
-        // perform 1-in-k sampling, beginning at random element in arrList
-        let sample = [];
-        let k = Math.floor(arrList.length / sampleSize);
-        let startIdx = Random.randomIntNoSeed(0, arrList.length);
-        let i = startIdx;
-        while (i < arrList.length) {
-            if (sample.length < sampleSize) {
-                sample.push(arrList[i]);
-            }
-            i += k;
-        }
-        i -= arrList.length; // end of list, wrap around to beginning
-        for (let i = 0; i < startIdx; i += k) {
-            if (sample.length < sampleSize) {
-                sample.push(arrList[i]);
-            }
-            i += k;
-        }
-        return sample;
-    }
+    static systematicSample(list, sampleSize) {
+    let newList = [];
+    for (picker = Math.floor(Math.random() * list.length) + 1; newList.length != sampleSize; picker++ ){
+        if(picker == list.length){picker = 0};
+        newList.push(list[picker])}
+    return sample;
+	}
 
     static marginOfError(sampleArr, confidence=95) {
         // given array and confidence level as a percent, return moe
