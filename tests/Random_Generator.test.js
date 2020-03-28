@@ -1,7 +1,7 @@
 const Random = require('../modules/Random_Generator');
 const verboseOutput = false;
 
-test('Random integer between 10 and 100', () => {
+test('tests randomIntNoSeed', () => {
     let val = Random.randomIntNoSeed(10,100);
     if (verboseOutput) {
         console.log('Random integer between 10 and 100:', val);
@@ -9,7 +9,7 @@ test('Random integer between 10 and 100', () => {
     expect(val).toBeGreaterThanOrEqual(10);
     expect(val).toBeLessThanOrEqual(100);
 });
-test('Random float number between 10 and 100', () => {
+test('tests randomFlNoSeed', () => {
     let val = Random.randomFlNoSeed(10,100);
     if (verboseOutput) {
         console.log('Random float number between 10 and 100:', val);
@@ -17,7 +17,7 @@ test('Random float number between 10 and 100', () => {
     expect(val).toBeGreaterThanOrEqual(10);
     expect(val).toBeLessThanOrEqual(100);
 });
-test('Random integer between 10 and 100, with seed', () => {
+test('Tests randomIntSeed', () => {
     let val1 = Random.randomIntSeed(100, 10, 100);
     let val2 = Random.randomIntSeed(100, 10, 100);
     if (verboseOutput) {
@@ -27,7 +27,7 @@ test('Random integer between 10 and 100, with seed', () => {
     expect(val1).toBeLessThanOrEqual(100);
     expect(val1).toEqual(val2);
 });
-test('Random float number between 10 and 100, with seed', () => {
+test('tests randomFlSeed', () => {
     let val1 = Random.randomFlSeed(100, 10, 100);
     let val2 = Random.randomFlSeed(100, 10, 100);
     if (verboseOutput) {
@@ -37,7 +37,7 @@ test('Random float number between 10 and 100, with seed', () => {
     expect(val1).toBeLessThanOrEqual(100);
     expect(val1).toEqual(val2);
 });
-test('Random list of random seeded numbers, between 10 and 100', () => {
+test('tests randomIntListSeeded', () => {
     let size = 10;
     let l1 = Random.randomIntListSeeded(100, 10, 100, size);
     let l2 = Random.randomIntListSeeded(100, 10, 100, size);
@@ -47,7 +47,7 @@ test('Random list of random seeded numbers, between 10 and 100', () => {
     expect(l1).toHaveLength(10);
     expect(l1).toEqual(l2);
 });
-test('Random list of seeded float numbers, between 10 and 100', () => {
+test('tests randomFlListSeeded', () => {
     let size = 10;
     let l1 = Random.randomFlListSeeded(100, 10, 100, size);
     let l2 = Random.randomFlListSeeded(100, 10, 100, size);
@@ -57,7 +57,7 @@ test('Random list of seeded float numbers, between 10 and 100', () => {
     expect(l1).toHaveLength(10);
     expect(l1).toEqual(l2);
 });
-test('Selects random item in a list, within a range of 10 to 100', () => {
+test('tests randomIntListSeeded', () => {
     let size = 10;
     let arrList = Random.randomIntListSeeded(100, 10, 100, size);
     let val = Random.selectRandomItem(arrList);
@@ -66,16 +66,8 @@ test('Selects random item in a list, within a range of 10 to 100', () => {
     }
     expect(arrList).toContain(val);
 });
-test('Selects random seeded item in a list, within a range of 10 to 100', () => {
-    let size = 10;
-    let arrList = Random.randomIntListSeeded(100, 10, 100, size);
-    let val = Random.selectRandomItem(arrList);
-    if (verboseOutput) {
-        console.log('Selects random seeded item in a list, within a range of 10 to 100:', val);
-    }
-    expect(arrList).toContain(val);
-});
-test('Select 5 random items from an established list', () => {
+
+test('Select 5 random items from an established list for selectNItems', () => {
     let size = 10;
     let arrList = Random.randomIntListSeeded(100, 10, 100, size);
     let newArrList = Random.selectNItems(arrList, 5);
@@ -84,7 +76,7 @@ test('Select 5 random items from an established list', () => {
     }
     expect(newArrList).toHaveLength(5);
 });
-test('Selects 5 seeded random items from an established list', () => {
+test('Selects 5 seeded random items from an established list for selectNItemsSeeded', () => {
     let size = 10;
     let arrList = Random.randomIntListSeeded(100, 10, 100, size);
     let newArrList1 = Random.selectNItemsSeeded(100, arrList, 5);
