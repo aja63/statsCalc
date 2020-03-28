@@ -10,8 +10,8 @@
     "coveralls": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "keywords": [],
-  "author": "Allison Eglow",
-  "email": "ae324@njit.edu",
+  "author": "Abraham Allen",
+  "email": "aja63@njit.edu",
   "license": "ISC",
   "dependencies": {
     "compute-skewness": "^1.0.1",
