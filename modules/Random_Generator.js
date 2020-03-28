@@ -64,7 +64,7 @@ class Random {
     //Selects N amount of random items, with replacement
     static selectNItems(list, n) {
         let returnList = [];
-        while (returnList.length <= n) {
+        while (returnList.length < n) {
             let item = Math.floor(Math.random() * list.length) + 0;
             returnList.push(list[item]);
         }
