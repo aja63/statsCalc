@@ -2,7 +2,7 @@ const Random = require('../modules/Random_Generator');
 const verboseOutput = false;
 
 test('Random integer between 10 and 100', () => {
-    let val = Random.randomIntNoSeed(10,100);
+    let val = Random.randomIntSeedless(10,100);
     if (verboseOutput) {
         console.log('Random integer between 10 and 100:', val);
     }
@@ -10,7 +10,7 @@ test('Random integer between 10 and 100', () => {
     expect(val).toBeLessThanOrEqual(100);
 });
 test('Random float number between 10 and 100', () => {
-    let val = Random.randomFlNoSeed(10,100);
+    let val = Random.randomFlSeedless(10,100);
     if (verboseOutput) {
         console.log('Random float number between 10 and 100:', val);
     }
