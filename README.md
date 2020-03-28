@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ae324/stats_calc_project.svg?branch=master)](https://travis-ci.org/ae324/stats_calc_project)
 
 
-Abraham Allen did the random and sampling modules. Partially helped copmile the calculator. 
+Abraham Allen did the random and sampling modules.
 
 
 
