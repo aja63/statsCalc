@@ -33,7 +33,7 @@ class Sampling {
     for (picker = Math.floor(Math.random() * list.length) + 1; newList.length < sampleSize; picker++ ){
         if(picker == list.length){picker = 0};
         newList.push(list[picker])}
-    return sample;
+    return newList;
 	}
 
     static marginOfError(sampleArr, confidence=95) {
